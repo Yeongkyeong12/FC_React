@@ -10,7 +10,8 @@ const StyledButton = styled.button`
   color: white;
   font-weight: bold;
   cursor: pointer;
-  padding: 0 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   /* 크기 */
   height: 2.25rem;
@@ -24,10 +25,15 @@ const StyledButton = styled.button`
   &:active {
     background: #1c7ed6;
   }
+
+  /*기타*/
+  & + & {
+    margin-left: 1rem;
+  }
 `;
 
-function Button() {
-  return <div></div>;
+function Button({ children, ...rest }) {
+  return <StyledButton {...rest}>{children}</StyledButton>;
 }
 
 export default Button;
